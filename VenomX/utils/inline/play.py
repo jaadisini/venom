@@ -19,10 +19,10 @@ def track_markup(_, videoid, user_id, channel, fplay):
         ],
         [
             InlineKeyboardButton(
-                text="owner", url="https//:t.me/jaahilang",
+                text="Dᴇᴠᴇʟᴏᴘᴇʀ", url="https//:t.me/jaahilang",
             ),
             InlineKeyboardButton(
-                text="channel", url="https://t.me/stayheresay",
+                text="Cʜᴀɴɴᴇʟ", url="https://t.me/stayheresay",
             )
         ],
         [
@@ -76,10 +76,10 @@ def stream_markup_timer(_, chat_id, played, dur):
             ],
         [
             InlineKeyboardButton(
-                text="owner", url="https//:t.me/jaahilang",
+                text="Dᴇᴠᴇʟᴏᴘᴇʀ", url="https//:t.me/jaahilang",
             ),
             InlineKeyboardButton(
-                text="channel", url="https://t.me/stayheresay",
+                text="Cʜᴀɴɴᴇʟ", url="https://t.me/stayheresay",
             )
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
@@ -98,10 +98,10 @@ def stream_markup(_, chat_id):
             ],
         [
             InlineKeyboardButton(
-                text="owner", url="https//:t.me/jaahilang",
+                text="Dᴇᴠᴇʟᴏᴘᴇʀ", url="https//:t.me/jaahilang",
             ),
             InlineKeyboardButton(
-                text="channel", url="https://t.me/stayheresay",
+                text="Cʜᴀɴɴᴇʟ", url="https://t.me/stayheresay",
             )
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],

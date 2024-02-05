@@ -1,10 +1,10 @@
 import os, logging, asyncio, random
-from telethon import Button
+from pyrogram import Button
 from telethon import TelegramClient, events
-from telethon.tl.types import ChannelParticipantAdmin
-from telethon.tl.types import ChannelParticipantCreator
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.errors import UserNotParticipantError
+from pyrogram.tl.types import ChannelParticipantAdmin
+from pyrogram.tl.types import ChannelParticipantCreator
+from pyrogram.tl.functions.channels import GetParticipantRequest
+from pyrogram.errors import UserNotParticipantError
 
 from config import BOT_TOKEN as bot_token, API_ID as api_id, API_HASH as api_hash
 

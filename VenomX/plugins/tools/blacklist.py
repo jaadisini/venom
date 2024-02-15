@@ -11,7 +11,7 @@ from config import SUPPORT_CHAT, adminlist, confirmer
 from VenomX.misc import SUDOERS, db
 from VenomX.utils.decorators.errors import capture_err
 from VenomX.utils.decorators.permission import adminsOnly
-from VenomX.utils.decorators.admins import from list_admins
+from VenomX.utils.decorators.admins import list_admins
 from VenomX.utils.database import (
     delete_blacklist_filter,
     get_blacklisted_words,
@@ -26,7 +26,7 @@ chat_id = [-1001955725516]
 #@adminsOnly("can_restrict_members")
 async def save_filters_bl(_, message: Message):
     user = message.from_user
-    admin_list = await adminlist(message.chat.id)
+    admin_list = await list_admins(message.chat.id)
     if user.id not in admin_list:
         return
     chat_id = message.chat.id

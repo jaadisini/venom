@@ -10,7 +10,7 @@ from VenomX import app
 from VenomX.misc import SUDOERS, db
 from VenomX.utils.decorators.errors import capture_err
 from VenomX.utils.decorators.permission import adminsOnly
-from VenomX.utils.decorators.admins import list_admins
+from VenomX.utils.decorators.admins import AdminRightsCheck
 from VenomX.utils.database import (
     delete_blacklist_filter,
     get_blacklisted_words,

@@ -11,12 +11,12 @@ from VenomX.misc import SUDOERS, db
 from VenomX.utils.decorators.errors import capture_err
 from VenomX.utils.decorators.permissions import adminsOnly
 from VenomX.utils.admin import list_admins
-from VebomX.utils.database import (
+from VenomX.utils.database import (
     delete_blacklist_filter,
     get_blacklisted_words,
     save_blacklist_filter,
 )
-from wbb.utils.filter_groups import blacklist_filters_group
+from VenomX.utils.filter_groups import blacklist_filters_group
 
 __MODULE__ = "Blacklist"
 __HELP__ = """

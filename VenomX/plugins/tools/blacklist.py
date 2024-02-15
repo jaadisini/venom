@@ -6,7 +6,7 @@ from time import time
 from pyrogram import filters
 from pyrogram.enums import ParseMode
 from pyrogram.types import ChatPermissions, Message
-
+from VenomX import app
 from VenomX.misc import SUDOERS, db
 from VenomX.utils.decorators.errors import capture_err
 from VenomX.utils.decorators.permission import adminsOnly

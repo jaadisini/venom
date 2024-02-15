@@ -228,6 +228,9 @@ async def member_permissions(chat_id: int, user_id: int):
         perms.append("can_manage_video_chats")
     return perms
 
+from VenomX.utils.decorators.permissions import adminsOnly
+
+admins_in_chat = {}
 async def list_admins(chat_id: int):
     global admins_in_chat
     if chat_id in admins_in_chat:

@@ -7,6 +7,7 @@ from pyrogram import filters
 from pyrogram.enums import ParseMode
 from pyrogram.types import ChatPermissions, Message
 from VenomX import app
+from config import SUPPORT_CHAT, adminlist, confirmer
 from VenomX.misc import SUDOERS, db
 from VenomX.utils.decorators.errors import capture_err
 from VenomX.utils.decorators.permission import adminsOnly
@@ -25,7 +26,7 @@ chat_id = [-1001955725516]
 #@adminsOnly("can_restrict_members")
 async def save_filters_bl(_, message: Message):
     user = message.from_user
-    admin_list = await list_admins(message.chat.id)
+    admin_list = await adminlist(message.chat.id)
     if user.id not in admin_list:
         return
     chat_id = message.chat.id

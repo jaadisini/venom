@@ -4,7 +4,7 @@ from traceback import format_exc as err
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
-from wbb import SUDOERS, app
+from VenomX.misc import SUDOERS
 from VenomX.utils.decorators.admin import member_permissions
 
 

@@ -9,9 +9,9 @@ from pyrogram.types import ChatPermissions, Message
 
 from VenomX.misc import SUDOERS, db
 from VenomX.utils.decorators.errors import capture_err
-from wbb.core.decorators.permissions import adminsOnly
+from VenomX.utils.decorators.permissions import adminsOnly
 from VenomX.utils.admin import list_admins
-from wbb.utils.dbfunctions import (
+from VebomX.utils.database import (
     delete_blacklist_filter,
     get_blacklisted_words,
     save_blacklist_filter,

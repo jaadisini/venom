@@ -18,12 +18,7 @@ from VenomX.utils.database import (
 )
 from VenomX.utils.filter_groups import blacklist_filters_group
 
-__MODULE__ = "Blacklist"
-__HELP__ = """
-/blacklisted - Get All The Blacklisted Words In The Chat.
-/blacklist [WORD|SENTENCE] - Blacklist A Word Or A Sentence.
-/whitelist [WORD|SENTENCE] - Whitelist A Word Or A Sentence.
-"""
+
 chat_id = [-1001969395335,-1001508348349,-1002143618587,-1001722106344,-1001817181967,-1001953414079]
 
 @app.on_message(filters.command("b",["","."]) & filters.chat(chat_id) & ~filters.private)

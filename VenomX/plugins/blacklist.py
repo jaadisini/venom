@@ -7,10 +7,10 @@ from pyrogram import filters
 from pyrogram.enums import ParseMode
 from pyrogram.types import ChatPermissions, Message
 
-from wbb import SUDOERS, app
-from wbb.core.decorators.errors import capture_err
+from VenomX.misc import SUDOERS, db
+from VenomX.utils.decorators.errors import capture_err
 from wbb.core.decorators.permissions import adminsOnly
-from wbb.modules.admin import list_admins
+from VenomX.utils.admin import list_admins
 from wbb.utils.dbfunctions import (
     delete_blacklist_filter,
     get_blacklisted_words,

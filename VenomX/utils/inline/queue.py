@@ -24,10 +24,10 @@ def queue_markup(
         ],
          [
             InlineKeyboardButton(
-                text="🥀 ᴏᴡɴᴇʀ 🥀", url="https://t.me/Venom_bolti_public",
+                text=" ᴏᴡɴᴇʀ ", url="https://t.me/jxsupport",
             ),
             InlineKeyboardButton(
-                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url="https://t.me/Venom_Chatting",
+                text=" sᴜᴩᴩᴏʀᴛ ", url="https://t.me/stayheresay",
             ),
         ],
     ]
@@ -50,10 +50,10 @@ def queue_markup(
         ],
          [
             InlineKeyboardButton(
-                text="🥀 ᴏᴡɴᴇʀ 🥀", url="https://t.me/Venom_bolti_public",
+                text="ᴏᴡɴᴇʀ", url="https://t.me/jxsupport",
             ),
             InlineKeyboardButton(
-                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url="https://t.me/Venom_Chatting",
+                text="sᴜᴩᴩᴏʀᴛ", url="https://t.me/stayheresay,
             ),
         ],
     ]
@@ -76,10 +76,10 @@ def queue_back_markup(_, CPLAY):
            ],
              [
             InlineKeyboardButton(
-                text="🥀 ᴏᴡɴᴇʀ 🥀", url="https://t.me/Venom_bolti_public",
+                text="ᴏᴡɴᴇʀ", url="https://t.me/jxsupport",
             ),
             InlineKeyboardButton(
-                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url="https://t.me/Venom_Chatting",
+                text="sᴜᴩᴩᴏʀᴛ", url="https://t.me/stayheresay",
             ),
         ],
         ]
@@ -97,10 +97,10 @@ def aq_markup(_, chat_id):
         ],
          [
             InlineKeyboardButton(
-                text="🥀 ᴏᴡɴᴇʀ 🥀", url="https://t.me/Venom_bolti_public",
+                text="ᴏᴡɴᴇʀ", url="https://t.me/jxsupport",
             ),
             InlineKeyboardButton(
-                text="🥀 sᴜᴩᴩᴏʀᴛ 🥀", url="https://t.me/Venom_Chatting",
+                text="sᴜᴩᴩᴏʀᴛ", url="https://t.me/stayheresay",
             ),
         ],
     ]

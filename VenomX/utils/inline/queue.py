@@ -53,7 +53,7 @@ def queue_markup(
                 text="ᴏᴡɴᴇʀ", url="https://t.me/jxsupport",
             ),
             InlineKeyboardButton(
-                text="sᴜᴩᴩᴏʀᴛ", url="https://t.me/stayheresay,
+                text="sᴜᴩᴩᴏʀᴛ", url="https://t.me/stayheresay",
             ),
         ],
     ]

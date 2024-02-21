@@ -5,8 +5,9 @@ import emoji
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
-from wbb import app
-from wbb.modules.admin import list_admins
+from VenomX import app
+from VenomX.utils.decorators.admins import list_admins
+
 
 __MODULE__ = "AutoBlacklist"
 __HELP__ = """
@@ -14,7 +15,7 @@ __HELP__ = """
 /autoblacklistd - ini apa?
 """
 
-chat_id = [-1001710412230, -1001629982867]
+chat_id = [-1001955725516]
 
 
 @app.on_message(filters.text & filters.chat(chat_id) & ~filters.private, group=1)
@@ -54,6 +55,6 @@ async def dk_validate_bl(c: Client, message: Message):
         print(traceback.format_exc())
         return False
 
-@app.on_message(filters.command("asu",["/","."]))
+@app.on_message(filters.command("au",["/","."]))
 async def dk_autoblacklist(_, message: Message):
     await message.reply_text("apa ini2?")

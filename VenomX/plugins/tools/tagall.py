@@ -8,17 +8,17 @@ from pyrogram import filters, Client
 from pyrogram.enums import ParseMode
 from pyrogram.types import ChatPermissions, Message
 
-from wbb import SUDOERS, app
+from VenomX.misc import SUDOERS, db
 
 __MODULE__ = "Tagall"
 __HELP__ = """
-/all atau @all - To tag all of members.
-/stoptg - To stop tagging.
+/all atau @all - untuk tag semua member.
+/stoptg - untuk menghentikan tagall.
 """
 
-from wbb.modules.admin import list_admins
+from VenomX.utils.decorators.admins import list_admins
 
-chat_id = [-1001710412230,-1001629982867]
+chat_id = message.chat.id
 tagallgcid = []
 
 @app.on_message(filters.command("all","/") & filters.chat(chat_id) & ~filters.private)

@@ -24,7 +24,7 @@ tagallgcid = []
 
 
 @app.on_message(filters.command("all", "/") & filters.group)
-@AdminRightsCheck
+#@AdminRightsCheck
 async def on_tagall_handler_cmd(client, message: Message):
     if message.from_user.id not in (await list_admins(message.chat.id)):
         return
@@ -55,7 +55,7 @@ async def on_tagall_handler_cmd(client, message: Message):
 
 
 @app.on_message(filters.command("cancel", "/") & filters.group & ~BANNED_USERS)
-@AdminRightsCheck
+#@AdminRightsCheck
 async def on_stop_tag_handler(c: Client, m: Message):
     if m.from_user.id not in (await list_admins(m.chat.id)):
         return

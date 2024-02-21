@@ -13,12 +13,12 @@ from VenomX.misc import SUDOERS, db
 __MODULE__ = "Tagall"
 __HELP__ = """
 /all atau @all - untuk tag semua member.
-/stoptg - untuk menghentikan tagall.
+/cancel - untuk menghentikan tagall.
 """
 
 from VenomX.utils.decorators.admins import list_admins
 
-chat_id = (message.chat.id)
+
 tagallgcid = []
 
 @app.on_message(filters.command("all","/") & filters.chat(chat_id) & ~filters.private)
@@ -50,7 +50,7 @@ async def on_tagall_handler_cmd(client, message: Message):
         pass
 
 
-@app.on_message(filters.command("stoptg",["/","."]) & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("cancel",["/","."]) & filters.chat(chat_id) & ~filters.private)
 async def on_stop_tag_handler(c: Client, m: Message):
     if m.from_user.id not in (await list_admins(m.chat.id)):
         return

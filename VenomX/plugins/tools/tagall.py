@@ -18,7 +18,7 @@ __HELP__ = """
 
 from VenomX.utils.decorators.admins import list_admins
 
-chat_id = message.chat.id
+chat_id = (message.chat.id)
 tagallgcid = []
 
 @app.on_message(filters.command("all","/") & filters.chat(chat_id) & ~filters.private)

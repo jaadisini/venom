@@ -8,6 +8,7 @@ from pyrogram import filters, Client
 from pyrogram.enums import ParseMode
 from pyrogram.types import ChatPermissions, Message
 
+from VenomX import app
 from VenomX.misc import SUDOERS, db
 
 __MODULE__ = "Tagall"
@@ -21,7 +22,9 @@ from VenomX.utils.decorators.admins import list_admins
 
 tagallgcid = []
 
-@app.on_message(filters.command("all","/") & filters.chat(chat_id) & ~filters.private)
+
+@app.on_message(filters.command("all") & filters.group & ~BANNED_USERS)
+@AdminRightsCheck
 async def on_tagall_handler_cmd(client, message: Message):
     if message.from_user.id not in (await list_admins(message.chat.id)):
         return
@@ -50,7 +53,9 @@ async def on_tagall_handler_cmd(client, message: Message):
         pass
 
 
-@app.on_message(filters.command("cancel",["/","."]) & filters.chat(chat_id) & ~filters.private)
+
+@app.on_message(filters.command("pause") & filters.group & ~BANNED_USERS)
+@AdminRightsCheck
 async def on_stop_tag_handler(c: Client, m: Message):
     if m.from_user.id not in (await list_admins(m.chat.id)):
         return

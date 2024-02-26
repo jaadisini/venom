@@ -43,7 +43,7 @@ GIT_TOKEN = getenv(
 )  # Fill this variable if your upstream repository is private
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/stayheresay")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/jxsupport")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/cillsupport")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -67,8 +67,8 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
 
 
 # Get your pyrogram v2 session from @Venom_string_robot on Telegram
-STRING1 = getenv("STRING_SESSION", "BQAhIHQAOTbLOlA5y5j5if5Ap8D-jFNI1G5PPmZkVhXg0KdyB0-N6RbnPj4JOAybxPr0AZ423IViafxLL-OgjlAL4q1D-mRzuG31P5Bqm96lFBnVVxsbG6gxsMTAiOFOqzbpH5JAupnT1Ur5y4zxtEd0zl3sYww0su57ncCK2U5rjomfv8Rq_vKiKm_wt8_0DVjS5cq_Q65qIRbkRYIUu-clqVJS6W6kXrz2RH_qZKD8RHFXRL5quJAZGxs8590hz3CVpuC3HBhPMycDhLKeq8Mk23p8ei4GmrXIR-qs9aVbhK2ad488mHywNkKqgVz4hrPeo-kkzyY0Ys6jOOda8DrwoDwgAAAABMuj75AA")
-STRING2 = getenv("STRING_SESSION2", "BQGHOVQAdHmhb14IwJQE7iK_44N1sKZljj3d-Z6zkAF3IwA9hE5Z6oTZps4sIXRnrjHIcvRjOtRJJnZZ9Q5LWWT5DxQ-TpknbrRwgTv5wMRaRUnOVreZmSBadvx8-u3Mc8fwKXGVsh9j-85DOhC0dcJr-co6Q7E7dXnKslA9u0SXWy5UPn2d09kykD8Lb-7z2nLBqdVx7xzJjBFZqx3hpCRwX75-78eSSU32yjwe0Saq80wqHdGo7N0SFGZ5n21vBKYvdX9NF3StkrqY6HZsupXrOTLHBEfj_qQgAtxJrI3syz4pTuenXULzzZOrPzfyIoPNZj0dsmE1My9CLxlGdF84kK_iMwAAAAFkLaiZAA")
+STRING1 = getenv("STRING_SESSION", "BQGHOVQAdHmhb14IwJQE7iK_44N1sKZljj3d-Z6zkAF3IwA9hE5Z6oTZps4sIXRnrjHIcvRjOtRJJnZZ9Q5LWWT5DxQ-TpknbrRwgTv5wMRaRUnOVreZmSBadvx8-u3Mc8fwKXGVsh9j-85DOhC0dcJr-co6Q7E7dXnKslA9u0SXWy5UPn2d09kykD8Lb-7z2nLBqdVx7xzJjBFZqx3hpCRwX75-78eSSU32yjwe0Saq80wqHdGo7N0SFGZ5n21vBKYvdX9NF3StkrqY6HZsupXrOTLHBEfj_qQgAtxJrI3syz4pTuenXULzzZOrPzfyIoPNZj0dsmE1My9CLxlGdF84kK_iMwAAAAFkLaiZAA")
+STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
@@ -87,21 +87,21 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
+    "START_IMG_URL", "https://telegra.ph//file/768e52d46733806e6beee.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
+    "PING_IMG_URL", "https://telegra.ph//file/768e52d46733806e6beee.jpg"
 )
-PLAYLIST_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-STATS_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-TELEGRAM_AUDIO_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-TELEGRAM_VIDEO_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-STREAM_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-SOUNCLOUD_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-YOUTUBE_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org/file/2c9385bec55fb3fdf0f29.jpg"
+PLAYLIST_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+STATS_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+TELEGRAM_AUDIO_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+TELEGRAM_VIDEO_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+STREAM_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+SOUNCLOUD_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+YOUTUBE_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://telegra.ph//file/768e52d46733806e6beee.jpg"
 
 
 def time_to_seconds(time):

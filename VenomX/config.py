@@ -35,7 +35,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY", " a9fe4563-b78b-4445-8f21-da32502737f1
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/ejaanck/venom",
+    "https://t.me/ndkzstore",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(

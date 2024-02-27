@@ -25,11 +25,11 @@ from VenomX.utils.filter_groups import blacklist_filters_group
 @adminsOnly("can_restrict_members")
 async def save_filters(_, message):
     if len(message.command) < 2:
-        return await message.reply_text("Usage:\n/blacklist [WORD|SENTENCE]")
+        return await message.reply_text("direp tolol bego amat lu")
     word = message.text.split(None, 1)[1].strip()
     if not word:
         return await message.reply_text(
-            "**Usage**\n__/blacklist [WORD|SENTENCE]__"
+            "direp tolol bego amat lu"
         )
     chat_id = message.chat.id
     await save_blacklist_filter(chat_id, word)

@@ -40,7 +40,7 @@ from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 
 from VenomX import aiohttpsession as aiosession
-from VenomX.utils.databes import start_restart_stage
+from VenomX.utils.database import start_restart_stage
 from VenomX.utils.http import get, post
 
 

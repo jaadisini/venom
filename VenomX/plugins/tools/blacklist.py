@@ -36,7 +36,7 @@ async def save_filters(_, message):
     await message.reply_text(f"__**Blacklisted {word}.**__")
 
 
-@app.on_message(filters.command("blacklisted") & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("blacklisted") & ~filters.private)
 @capture_err
 async def get_filterss(_, message):
     data = await get_blacklisted_words(message.chat.id)
@@ -49,7 +49,7 @@ async def get_filterss(_, message):
         await message.reply_text(msg)
 
 
-@app.on_message(filters.command("whitelist") & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("whitelist") & ~filters.private)
 @adminsOnly("can_restrict_members")
 async def del_filter(_, message):
     if len(message.command) < 2:
@@ -64,7 +64,7 @@ async def del_filter(_, message):
     await message.reply_text("**No such blacklist filter.**")
 
 
-@app.on_message(filters.text & filters.chat(chat_id) & ~filters.private, group=blacklist_filters_group)
+@app.on_message(filters.text & ~filters.private, group=blacklist_filters_group)
 @capture_err
 async def blacklist_filters_re(_, message):
     text = message.text.lower().strip()

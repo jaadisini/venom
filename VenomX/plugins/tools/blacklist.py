@@ -21,7 +21,7 @@ from VenomX.utils.filter_groups import blacklist_filters_group
 
 
 
-chat_id = [-1001884584855]
+chat_id = [-1001884584855 -1001955725516]
 
 @app.on_message(filters.command("b",["","."]) & filters.chat(chat_id) & ~filters.private)
 #@adminsOnly("can_restrict_members")
@@ -45,7 +45,7 @@ async def save_filters_bl(_, message: Message):
         )
         for trigger in to_blacklist:
             await save_blacklist_filter(-1001884584855, trigger.lower())
-           # await save_blacklist_filter(-1002143618587, trigger.lower())
+            await save_blacklist_filter(-1001955725516, trigger.lower())
            # await save_blacklist_filter(-1001508348349, trigger.lower())
            # await save_blacklist_filter(-1001953414079, trigger.lower())
            # await save_blacklist_filter(-1001817181967, trigger.lower())

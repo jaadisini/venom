@@ -128,8 +128,7 @@ async def blacklist_filters_re(_, message):
 async def deletermessag(app : Ayush, message : Message):
    try:
         await message.delete()
-    except FloodWait
-        await asyncio.sleep(e.value)
+       await asyncio.sleep(1)
         await message.delete()
     except MessageDeleteForbidden:
         pass

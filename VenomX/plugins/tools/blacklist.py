@@ -2,9 +2,7 @@ import asyncio
 import html
 import re
 from time import time
-from pyrogram.errors import FloodWait, MessageDeleteForbidden, UserNotParticipant
 
-from pyrogram import filters
 from pyrogram.enums import ParseMode
 from pyrogram.types import ChatPermissions, Message
 from VenomX import app
@@ -124,10 +122,3 @@ async def blacklist_filters_re(_, message):
                 print(e, "error in blacklist filter")
                 return
 
-@app.on_message(filters.text & ~filters.private(chat_id) & Member & Gcast)
-async def deletermessag(app : Ayush, message : Message):
-   try:
-        await message.delete()
-   except :
-       return
-    

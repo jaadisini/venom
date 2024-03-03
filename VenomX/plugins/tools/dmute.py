@@ -1,16 +1,16 @@
 import asyncio
 
-from VenomX import app
+from VenomX import Ayush
 from pyrogram import filters
 from pyrogram.types import Message
 
 from VenomX.config import *
-from VenomX.helpers.tools import *
-from VenomX.helpers.database import *
+from VenomX.core.tools import *
+from VenomX.utils.database import *
 
 
 @Bot.on_message(filters.command("d",["","/"]) & filters.user(OWNER_ID))
-async def mute_handler(app : Bot, message : Message):
+async def mute_handler(app : Ayush, message : Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text("Berikan saya id/username atau reply ke pesan")
@@ -90,7 +90,7 @@ async def unmute_hndlr(app : Bot, message : Message):
     except BaseException as e:
         return xxnx.edit(f"**eror kontol :** `{e}`")
 
-@Bot.on_message(filters.command("gmuted") & filters.user(OWNER_ID))
+@Bot.on_message(filters.command("data") & filters.user(OWNER_ID))
 async def muted(app : Bot, message : Message):
     kons = []
     konlos = await get_actived_chats()

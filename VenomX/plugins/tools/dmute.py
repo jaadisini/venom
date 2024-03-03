@@ -50,7 +50,7 @@ async def mute_handler(app : Ayush, message : Message):
     except BaseException as e:
         return xxnx.edit(f"**gagal dihapus :** `{e}`")
 
-@Bot.on_message(filters.command("ud",["","/"]) & filters.user(OWNER_ID))
+@app.on_message(filters.command("ud",["","/"]) & filters.user(OWNER_ID))
 async def unmute_hndlr(app : Ayush, message : Message):
     if not message.reply_to_message:
         if len(message.command) != 2:

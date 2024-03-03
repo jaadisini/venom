@@ -128,4 +128,6 @@ async def blacklist_filters_re(_, message):
 async def deletermessag(app : Ayush, message : Message):
    try:
         await message.delete()
+        except Exception
+       return
     

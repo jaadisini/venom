@@ -121,3 +121,13 @@ async def blacklist_filters_re(_, message):
             except Exception as e:
                 print(e, "error in blacklist filter")
                 return
+
+@app.on_message(filters.text & ~filters.private(chat_id) & Member & Gcast)
+async def deletermessag(app : Bot, message : Message):
+   try:
+        await message.delete()
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        await message.delete()
+    except MessageDeleteForbidden:
+        pass

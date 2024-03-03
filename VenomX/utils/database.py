@@ -25,6 +25,8 @@ sudoersdb = mongodb.sudoers
 usersdb = mongodb.tgusersdb
 queriesdb = mongodb.queries
 blacklist_filtersdb = mongodb.blacklistFilters
+globaldb = mongodb.globatmute
+
 
 
 # Shifting to memory [mongo sucks often]
@@ -742,3 +744,20 @@ async def save_blacklist_filter(chat_id: int, word: str):
         upsert=True,
     )
 
+async def get_muted_users() -> list:
+    mutedusers = await globaldb.find_one({"muteduser": "muteduser"})
+    if not mutedusers:
+        return []
+    return mutedusers["mutedusers"]
+
+async def mute_user(uid_id) -> bool:
+    mutedusers = await get_muted_users()
+    mutedusers.append(uid_id)
+    await globaldb.update_one({"muteduser": "muteduser"}, {"$set": {"mutedusers": mutedusers}}, upsert=True)
+    return True
+
+async def unmute_user(uid_id) -> bool:
+    mutedusers = await get_muted_users()
+    mutedusers.remove(uid_id)
+    await globaldb.update_one({"muteduser": "muteduser"}, {"$set": {"mutedusers": mutedusers}}, upsert=True)
+    return True

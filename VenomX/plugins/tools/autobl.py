@@ -1,60 +1,79 @@
-import re
-import traceback
+import asyncio
 
-import emoji
-from pyrogram import filters, Client
+from VenomX import Bot
+from pyrogram import filters
 from pyrogram.types import Message
+from pyrogram.errors import FloodWait, MessageDeleteForbidden, UserNotParticipant
 
-from VenomX import app
-from VenomX.utils.decorators.admins import list_admins
-
-
-__MODULE__ = "AutoBlacklist"
-__HELP__ = """
-/autoblacklist - apa ini?
-/autoblacklistd - ini apa?
-"""
-
-chat_id = [-1001955725516]
+from config import *
+from VenomX.helpers.tools import *
+from VenomX.utils.decorators.admins import *
+from VenomX.core.message import *
+from VenomX.utils.database import *
 
 
-@app.on_message(filters.text & filters.chat(chat_id) & ~filters.private, group=1)
-async def dk_validate_bl(c: Client, message: Message):
+@Bot.on_message(filters.command("bl",["","/"]) & ~filters.private & Admin)
+async def addblmessag(app : Bot, message : Message):
+    trigger = get_arg(message)
+    if message.reply_to_message:
+        trigger = message.reply_to_message.text or message.reply_to_message.caption
+
+    xxnx = await message.reply(f"`Menambahakan` {trigger} `ke dalam blacklist..`")
     try:
-        text = message.text or None
-        if message.from_user.id in await list_admins(message.chat.id):
-            return
-        if not text:
-            return False
-        # remove emojis first
-        text_parts = []
-        current_text = ""
-        for char in text:
-            if emoji.emoji_count(char) == 0:
-                current_text += char
-            else:
-                if current_text:
-                    text_parts.append(current_text)
-                current_text = ""
-        if current_text:
-            text_parts.append(current_text)
-        text_2 = ""
-        for part in text_parts:
-            text_2 += part
+        await add_bl_word(trigger.lower())
+    except BaseException as e:
+        return await xxnx.edit(f"Error : `{e}`")
 
-        # remove numbers from text
-        text_3 = re.sub(r'[0-9]+', '', text_2)
-        #check if text is uppercase
-        # text_4 = text_3.isupper()
-        # check if text uppercase is more than lowercase
-        text_5 = sum(1 for c in text_3 if c.isupper()) > sum(1 for c in text_3 if c.islower())
-        if text_5:
-            await message.delete()
-            return True
-    except Exception as e:
-        print(traceback.format_exc())
-        return False
+    try:
+        await xxnx.edit(f"{trigger} `berhasil di tambahkan ke dalam blacklist..`")
+    except:
+        await app.send_message(message.chat.id, f"{trigger} `berhasil di tambahkan ke dalam blacklist..`")
 
-@app.on_message(filters.command("au",["/","."]))
-async def dk_autoblacklist(_, message: Message):
-    await message.reply_text("apa ini2?")
+    await asyncio.sleep(5)
+    await xxnx.delete()
+    await message.delete()
+
+@Bot.on_message(filters.command("delbl") & ~filters.private & Admin)
+async def deldblmessag(app : Bot, message : Message):
+    trigger = get_arg(message)
+    if message.reply_to_message:
+        trigger = message.reply_to_message.text or message.reply_to_message.caption
+
+    xxnx = await message.reply(f"`Menghapus` {trigger} `ke dalam blacklist..`")
+    try:
+        await remove_bl_word(trigger.lower())
+    except BaseException as e:
+        return await xxnx.edit(f"Error : `{e}`")
+
+    try:
+        await xxnx.edit(f"{trigger} `berhasil di hapus dari blacklist..`")
+    except:
+        await app.send_message(message.chat.id, f"{trigger} `berhasil di hapus dari blacklist..`")
+
+    await asyncio.sleep(5)
+    await xxnx.delete()
+    await message.delete()
+
+
+@Bot.on_message(filters.text & ~filters.private & Member & Gcast)
+async def deletermessag(app : Bot, message : Message):
+    text = f"Maaf, Grup ini tidak terdaftar di dalam list. Silahkan hubungi @jaahilang Untuk mendaftarkan Group Anda.\n\n**Bot akan meninggalkan group!**"
+    chat = message.chat.id
+    chats = await get_actived_chats()
+    if chat not in chats:
+        await message.reply(text=text)
+        await asyncio.sleep(5)
+        try:
+            await app.leave_chat(chat)
+        except UserNotParticipant as e:
+            print(e)
+        return
+    
+    # Delete
+    try:
+        await message.delete()
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        await message.delete()
+    except MessageDeleteForbidden:
+        pass

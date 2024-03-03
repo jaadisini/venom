@@ -8,7 +8,7 @@ from pytz import timezone
 from pyrogram.types import Message, User
 from pyrogram.enums import MessageEntityType
 
-from antigcast.helpers.database import *
+from VenomX.utils.database import *
 
 def restart():
     os.execvp(sys.executable, [sys.executable, "-m VenomX"])

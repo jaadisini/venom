@@ -26,7 +26,7 @@ usersdb = mongodb.tgusersdb
 queriesdb = mongodb.queries
 blacklist_filtersdb = mongodb.blacklistFilters
 globaldb = mongodb.globatmute
-blackword = mongodb.BLACKWORDS
+blackword = mongodb.blackword
 
 
 # Shifting to memory [mongo sucks often]
@@ -760,4 +760,24 @@ async def unmute_user(uid_id) -> bool:
     mutedusers = await get_muted_users()
     mutedusers.remove(uid_id)
     await globaldb.update_one({"muteduser": "muteduser"}, {"$set": {"mutedusers": mutedusers}}, upsert=True)
+    return True
+
+async def get_bl_words() -> list:
+    filters = await blackword.find_one({"filter": "filter"})
+    if not filters:
+        return []
+    return filters["filters"]
+
+async def add_bl_word(trigger) -> bool:
+    x = trigger.lower()
+    filters = await get_bl_words()
+    filters.append(x)
+    await blackword.update_one({"filter": "filter"}, {"$set": {"filters": filters}}, upsert=True)
+    return True
+
+async def remove_bl_word(trigger) -> bool:
+    x = trigger.lower()
+    filters = await get_bl_words()
+    filters.remove(x)
+    await blackword.update_one({"filter": "filter"}, {"$set": {"filters": filters}}, upsert=True)
     return True

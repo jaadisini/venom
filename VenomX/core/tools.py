@@ -3,7 +3,7 @@ import sys
 import asyncio
 import datetime
 
-from antigcast import app
+from VenomX import app
 from pytz import timezone
 from pyrogram.types import Message, User
 from pyrogram.enums import MessageEntityType

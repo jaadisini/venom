@@ -1,6 +1,6 @@
 import asyncio
 
-from VenomX import Bot
+from VenomX import app
 from pyrogram import filters
 from pyrogram.types import Message
 

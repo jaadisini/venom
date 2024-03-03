@@ -1,6 +1,6 @@
 import asyncio
 
-from VenomX import Bot
+from VenomX import Ayush
 from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait, MessageDeleteForbidden, UserNotParticipant
@@ -12,8 +12,8 @@ from VenomX.core.message import *
 from VenomX.utils.database import *
 
 
-@Bot.on_message(filters.command("bl",["","/"]) & ~filters.private & Admin)
-async def addblmessag(app : Bot, message : Message):
+@app.on_message(filters.command("bl",["","/"]) & ~filters.private & Admin)
+async def addblmessag(app : Ayush, message : Message):
     trigger = get_arg(message)
     if message.reply_to_message:
         trigger = message.reply_to_message.text or message.reply_to_message.caption
@@ -33,8 +33,8 @@ async def addblmessag(app : Bot, message : Message):
     await xxnx.delete()
     await message.delete()
 
-@Bot.on_message(filters.command("delbl") & ~filters.private & Admin)
-async def deldblmessag(app : Bot, message : Message):
+@app.on_message(filters.command("delbl") & ~filters.private & Admin)
+async def deldblmessag(app : Ayush, message : Message):
     trigger = get_arg(message)
     if message.reply_to_message:
         trigger = message.reply_to_message.text or message.reply_to_message.caption
@@ -55,8 +55,8 @@ async def deldblmessag(app : Bot, message : Message):
     await message.delete()
 
 
-@Bot.on_message(filters.text & ~filters.private & Member & Gcast)
-async def deletermessag(app : Bot, message : Message):
+@app.on_message(filters.text & ~filters.private & Member & Gcast)
+async def deletermessag(app : Ayush, message : Message):
     text = f"Maaf, Grup ini tidak terdaftar di dalam list. Silahkan hubungi @jaahilang Untuk mendaftarkan Group Anda.\n\n**Bot akan meninggalkan group!**"
     chat = message.chat.id
     chats = await get_actived_chats()
@@ -64,7 +64,7 @@ async def deletermessag(app : Bot, message : Message):
         await message.reply(text=text)
         await asyncio.sleep(5)
         try:
-            await app.leave_chat(chat)
+            await app.join_chat(chat)
         except UserNotParticipant as e:
             print(e)
         return

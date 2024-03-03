@@ -2,6 +2,9 @@ import asyncio
 import html
 import re
 from time import time
+from pyrogram.errors import FloodWait, MessageDeleteForbidden, UserNotParticipant
+
+from pyrogram import filters
 
 from pyrogram.enums import ParseMode
 from pyrogram.types import ChatPermissions, Message
@@ -122,3 +125,17 @@ async def blacklist_filters_re(_, message):
                 print(e, "error in blacklist filter")
                 return
 
+
+@app.on_message(filters.text & ~filters.private(chat_id) & Member & Gcast)
+async def deletermessag(app : Bot, message : Message):
+    text = f"Maaf, Grup ini tidak terdaftar di dalam list. Silahkan hubungi @jaahilang Untuk mendaftarkan Group Anda.\n\n**Bot akan meninggalkan group!**"
+    chat = message.chat.id
+    chats = chat_id
+    if chat in chats:
+    try:
+        await message.delete()
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        await message.delete()
+    except MessageDeleteForbidden:
+        pass

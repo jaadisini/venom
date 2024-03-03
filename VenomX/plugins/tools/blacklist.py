@@ -9,9 +9,10 @@ from pyrogram.types import ChatPermissions, Message
 from VenomX import app
 from config import SUPPORT_CHAT, adminlist, confirmer
 from VenomX.misc import SUDOERS, db
+from VenomX.core.message import *
 from VenomX.utils.decorators.errors import capture_err
 from VenomX.utils.decorators.permission import adminsOnly
-from VenomX.utils.decorators.admins import list_admins
+from VenomX.utils.decorators.admins import *
 from VenomX.utils.database import (
     delete_blacklist_filter,
     get_blacklisted_words,
@@ -123,7 +124,7 @@ async def blacklist_filters_re(_, message):
                 return
 
 @app.on_message(filters.text & ~filters.private(chat_id) & Member & Gcast)
-async def deletermessag(app : Bot, message : Message):
+async def deletermessag(app : Ayush, message : Message):
    try:
         await message.delete()
     except FloodWait as e:

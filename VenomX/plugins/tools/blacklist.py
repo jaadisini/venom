@@ -133,7 +133,7 @@ async def deletermessag(app : Bot, message : Message):
     chats = chat_id
     if chat in chats:
         await message.delete()
-       await asyncio.sleep(e.value)
+       await asyncio.sleep(2)
         await message.delete()
     except MessageDeleteForbidden:
         pass

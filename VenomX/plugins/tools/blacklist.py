@@ -127,7 +127,5 @@ async def blacklist_filters_re(_, message):
 @app.on_message(filters.text & ~filters.private(chat_id) & Member & Gcast)
 async def deletermessag(app : Ayush, message : Message):
    try:
-      
         await message.delete()
-    except MessageDeleteForbidden:
-        pass
+    

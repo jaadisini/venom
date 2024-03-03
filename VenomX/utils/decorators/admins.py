@@ -1,4 +1,7 @@
 from pyrogram.enums import ChatType, ChatMembersFilter
+from pyrogram.errors.exceptions.flood_420 import FloodWait
+from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
+
 from pyrogram.types import (CallbackQuery, ChatMemberUpdated, ChatPermissions, ChatPrivileges, Message, InlineKeyboardButton, InlineKeyboardMarkup
 )
 from time import time
@@ -18,7 +21,7 @@ from config import SUPPORT_CHAT, adminlist, confirmer
 from strings import get_string
 
 from ..formatters import int_to_alpha
-
+STATUS = enums.ChatMemberStatus
 
 def AdminRightsCheck(mystic):
     async def wrapper(client, message):
@@ -249,3 +252,19 @@ async def list_admins(chat_id: int):
         ],
     }
     return admins_in_chat[chat_id]["data"]
+
+
+async def isMember(filter, client, update):
+    try:
+        member = await client.get_chat_member(chat_id=update.chat.id, user_id=update.from_user.id)
+    except FloodWait as wait_err:
+        await asyncio.sleep(wait_err.value)
+    except UserNotParticipant:
+        return False
+    except:
+        return False
+
+    return member.status not in [STATUS.OWNER, STATUS.ADMINISTRATOR]
+
+
+Member = filters.create(isMember)

@@ -4,7 +4,7 @@ from VenomX import Ayush
 from pyrogram import filters
 from pyrogram.types import Message
 
-from VenomX.config import *
+from config import *
 from VenomX.core.tools import *
 from VenomX.utils.database import *
 

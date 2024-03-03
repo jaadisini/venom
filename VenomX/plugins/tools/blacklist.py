@@ -2,6 +2,7 @@ import asyncio
 import html
 import re
 from time import time
+from pyrogram.errors import FloodWait, MessageDeleteForbidden, UserNotParticipant
 
 from pyrogram import filters
 from pyrogram.enums import ParseMode

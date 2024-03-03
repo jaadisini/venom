@@ -27,7 +27,7 @@ queriesdb = mongodb.queries
 blacklist_filtersdb = mongodb.blacklistFilters
 globaldb = mongodb.globatmute
 blackword = mongodb.blackword
-
+actchat = mongodb.activedchat
 
 # Shifting to memory [mongo sucks often]
 active = []
@@ -780,4 +780,23 @@ async def remove_bl_word(trigger) -> bool:
     filters = await get_bl_words()
     filters.remove(x)
     await blackword.update_one({"filter": "filter"}, {"$set": {"filters": filters}}, upsert=True)
+    return True
+
+
+async def get_actived_chats() -> list:
+    acctivedchats = await actchat.find_one({"acctivedchat": "acctivedchat"})
+    if not acctivedchats:
+        return []
+    return acctivedchats["acctivedchats"]
+
+async def add_actived_chat(trigger) -> bool:
+    acctivedchats = await get_actived_chats()
+    acctivedchats.append(trigger)
+    await actchat.update_one({"acctivedchat": "acctivedchat"}, {"$set": {"acctivedchats": acctivedchats}}, upsert=True)
+    return True
+
+async def rem_actived_chat(trigger) -> bool:
+    acctivedchats = await get_actived_chats()
+    acctivedchats.remove(trigger)
+    await actchat.update_one({"acctivedchat": "acctivedchat"}, {"$set": {"acctivedchats": acctivedchats}}, upsert=True)
     return True

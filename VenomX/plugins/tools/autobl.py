@@ -62,9 +62,9 @@ async def deletermessag(app : Ayush, message : Message):
     chats = await get_actived_chats()
     if chat not in chats:
         await message.reply(text=text)
-        await asyncio.sleep(5)
+        await asyncio.sleep(60)
         try:
-            await app.join_chat(chat)
+            await app.leave_chat(chat)
         except UserNotParticipant as e:
             print(e)
         return

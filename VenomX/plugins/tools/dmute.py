@@ -22,10 +22,7 @@ async def mute_handler(app : Ayush, message : Message):
         return await message.reply_text("Kamu tidak bisa melakukan Delete pada diri sendiri")
     elif user_id == app.me.id:
         return await message.reply_text("Kamu tidak bisa melakukan Delete pada Bot")
-    elif user_id in OWNER_ID:
-        return await message.reply_text("Kamu tidak bisa melakukan ini pada Developer Bot")
-
-
+    
     xxnx = await message.reply(f"`Masuk daftar monyet`")
 
     muted = await get_muted_users()

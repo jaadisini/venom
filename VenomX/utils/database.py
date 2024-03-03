@@ -26,7 +26,7 @@ usersdb = mongodb.tgusersdb
 queriesdb = mongodb.queries
 blacklist_filtersdb = mongodb.blacklistFilters
 globaldb = mongodb.globatmute
-
+blackword = mongodd.BLACKWORDS
 
 
 # Shifting to memory [mongo sucks often]

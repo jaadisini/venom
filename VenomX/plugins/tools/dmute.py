@@ -9,7 +9,7 @@ from VenomX.core.tools import *
 from VenomX.utils.database import *
 
 
-@app.on_message(filters.command("d",["","."]) & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("d",["","/"]) & filters.user(OWNER_ID))
 async def mute_handler(app : Ayush, message : Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -50,7 +50,7 @@ async def mute_handler(app : Ayush, message : Message):
     except BaseException as e:
         return xxnx.edit(f"**gagal dihapus :** `{e}`")
 
-@app.on_message(filters.command("ud",["","."]) & filters.chat(chat_id) & ~filters.private)
+@Bot.on_message(filters.command("ud",["","/"]) & filters.user(OWNER_ID))
 async def unmute_hndlr(app : Ayush, message : Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -90,7 +90,7 @@ async def unmute_hndlr(app : Ayush, message : Message):
     except BaseException as e:
         return xxnx.edit(f"**eror kontol :** `{e}`")
 
-@app.on_message(filters.command("data",["","."]) & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("data",["","/"]) & filters.user(OWNER_ID))
 async def muted(app : Ayush, message : Message):
     kons = []
     konlos = await get_actived_chats()

@@ -13,7 +13,7 @@ from VenomX.core.tools import *
 from VenomX.utils.database import *
 
 
-@app.on_message(filters.command("addgc") & filters.user(OWNER_ID))
+@app.on_message(filters.command("on") & filters.user(OWNER_ID))
 async def addgcmessag(app : Ayush, message : Message):
     chat_id = message.chat.id
     chat_name = message.chat.title
@@ -72,7 +72,7 @@ async def addgroupmessag(app : Ayush, message : Message):
     await xxnx.delete()
     await message.delete()
 
-@app.on_message(filters.command("rmgc") & filters.user(OWNER_ID))
+@app.on_message(filters.command("off") & filters.user(OWNER_ID))
 async def remgcmessag(app : Ayush, message : Message):
     chat_id = int(get_arg(message))
 
@@ -91,7 +91,7 @@ async def remgcmessag(app : Ayush, message : Message):
     await xxnx.delete()
     await message.delete()
 
-@app.on_message(filters.command("groups") & filters.user(OWNER_ID))
+@app.on_message(filters.command("gc") & filters.user(OWNER_ID))
 async def get_groupsmessag(app : Ayush, message : Message):
     group = []
     chats = await get_actived_chats()

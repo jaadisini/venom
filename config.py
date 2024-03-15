@@ -11,35 +11,34 @@ API_ID = int(getenv("API_ID", "25639252"))
 API_HASH = getenv("API_HASH", "42db0fd56c51ff2b94cf064838eba7c1")
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", "6956372908:AAGC6FzQ2LXiFQqQpZiEsDmFnNHXqz1ekoM")
+BOT_TOKEN = getenv("BOT_TOKEN", "6956372908:AAGVq1qX8mbjNGolU0Fa2MsLGLcEu2U-8Y4")
 
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://keygenstr:909090@cluster0.rzzlxkz.mongodb.net/?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://erkbwrs084:909090@cluster0.qdrfgmb.mongodb.net/?retryWrites=true&w=majority")
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 5400))
+###MUST_JOIN = getenv("MUST_JOIN", "gabutan07")
 
-SONG_DOWNLOAD_DURATION = int(
-    getenv("SONG_DOWNLOAD_DURATION_LIMIT", "5400")
-)
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 180))
+
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", "-1002146931876"))
 
-# Get this value from @Hot_Girl_Robot on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", "5061180769"))
+# Get this value from @FallenxBot on Telegram by /id
+OWNER_ID = int(getenv("OWNER_ID", 5061180769))
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", "miselmusik")
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", "musik")
 # Get it from http://dashboard.heroku.com/account
-HEROKU_API_KEY = getenv("HEROKU_API_KEY", " a9fe4563-b78b-4445-8f21-da32502737f1")
+HEROKU_API_KEY = getenv("HEROKU_API_KEY", "378ddd21-4ab1-46a8-b3ef-ef9c96f1d247")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/ejaanck/venom",
+    "https://github.com/jaadisini/venom",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
-    "GIT_TOKEN", "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"
+    "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/stayheresay")
@@ -51,8 +50,8 @@ AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", False)
 AUTO_SUGGESTION_TIME = int(
     getenv("AUTO_SUGGESTION_TIME", "500"))
 # Get this credentials from https://developer.spotify.com/dashboard
-SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
-SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
+SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "19609edb1b9f4ed7be0c8c1342039362")
+SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "409e31d3ddd64af08cfcc3b0f064fcbe")
 
 
 # Maximum limit for fetching playlist's track from youtube, spotify, apple links.
@@ -67,7 +66,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
 
 
 # Get your pyrogram v2 session from @Venom_string_robot on Telegram
-STRING1 = getenv("STRING_SESSION", "BQGHOVQAu5BTYdiOjVoR1dTE5Z_k_TJdCX4FrJ2inf9Pnvr6SiOX2stM9OSOH9Otyk8CYeAqFD12hue7g_L8nsfKVTpfOpLpBsKLWwHceGQi-OITI2y1ENPbQqrJSb18vJS78b1bK5Hy5MTZUgNnXQgoZc2m-OB29MpcQ6kjdfTVW_FwMXCSguIhB7dZqRhTs_Kte-x6s5lJ4cYt7NvH_LGbLnirYEB8Hsb2DdSFxYjI1EvxtOSy3_zvDUjTm9_4YVyDdBNbPezWJnJsG7mKSSIGwJvKGWqAMUAE0OVBuU14kvC10B1MI6lcq_SfrXhAk5Vos2JNWep1TK7VstYID9Nvje7XdwAAAAFkLaiZAA")
+STRING1 = getenv("STRING_SESSION", "BQGHOVQAUfHEKgcxxY2DYWyJ89aGAYqmXIqde5AxqzAQksg9txK5IKU7fw9fdb5IJISZ8Y518cmS1UNlQ4KSgVfSzDaOkxEerPwbqQwt-wLnjcV0BEWNFFUpRM5xcPOap31n5gdTtEMvf26_G3y8cCwDzjHz5uAlq7TuMDsdYWF4iOqqGXD3HY8p1eOm0v_Y41Nq249NugJEzKkO3sFHfBC_9s-M4td_lT-wBgGkqYYMCoTbQFn7emPdPOLGRE8N0t3lfdxcLJfRqjLGmfb97fqNh1tzxqqxAUMeQfZkt43_nHAz7kTe9nZYyfJWqtyiklF7xHkojRm1eoreIfQA5J9S5pvjvgAAAAA3v5y-AA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
